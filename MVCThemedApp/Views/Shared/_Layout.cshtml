@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>ASP.Net MVC App Theme</title>
+    @Assets.CSS("base.css")
+    @Assets.Theme("default")
+    @Assets.jQuery()
+    @Assets.Script("modernizr-1.7.min.js")
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>@Html.ActionLink("ASP.Net MVC App Theme", "Index")
+                </h1>
+            @Html.Partial("_UserNavigation")
+            @Html.Partial("_MainNavigation")
+        </div>
+        <div id="wrapper" class="wat-cf">
+            <div id="main">
+                @RenderBody()                
+            </div>            
+            @Html.Partial("_SideBar")
+        </div>
+        @Html.Partial("_Footer")
+</body>
+</html>

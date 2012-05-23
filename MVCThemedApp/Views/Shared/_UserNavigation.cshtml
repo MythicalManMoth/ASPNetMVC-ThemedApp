@@ -1,0 +1,10 @@
+﻿<div id="user-navigation">
+    @if (Request.IsAuthenticated)
+    {
+        <ul class="wat-cf">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Settings</a></li>
+            <li>@Html.ActionLink("Logout","LogOff","Account")</li>
+        </ul>
+    }
+</div>

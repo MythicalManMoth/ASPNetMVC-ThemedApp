@@ -1,0 +1,18 @@
+﻿@helper CSS(string cssFile)
+    {
+    <link rel="stylesheet" href="/Content/@cssFile" type="text/css"  /> 
+}
+@helper Theme(string themeName)
+    {
+    <link rel="stylesheet" href="/Content/themes/@themeName/style.css" type="text/css"  /> 
+}
+@helper Script(string scriptFile)
+    {
+    <script type="text/javascript" src="/Scripts/@scriptFile"></script>
+}
+@helper jQuery()
+    {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"
+        type="text/javascript"></script>
+}

@@ -1,0 +1,11 @@
+﻿<div id="main-navigation">
+    <ul class="wat-cf">
+        <li class="first active">@Html.ActionLink("Home", "Index", new { controller = "Home" }, new { id = "home-tab" })</li>
+        <li>@Html.ActionLink("About", "About", new { controller = "Home" }, new { id = "about-tab" }) </li>
+        @if (!Request.IsAuthenticated)
+        {
+            <li>@Html.ActionLink("Logon", "LogOn", "Account")</li>
+            <li>@Html.ActionLink("Register", "Register", "Account")</li>
+        }
+    </ul>
+</div>

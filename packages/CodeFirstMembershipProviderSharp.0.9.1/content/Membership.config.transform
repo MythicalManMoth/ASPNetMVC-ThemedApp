@@ -1,0 +1,39 @@
+<configuration>
+
+  <connectionStrings>
+    <!--Clear any connection strings to use the default SQL Express, or name your connection string "DataContext" and point to anywhere-->
+    <clear />
+  </connectionStrings>
+
+  <appSettings>
+    <!--Used to initialize the database-->
+    <add key="DatabaseInitializerForType CodeFirstMembershipSharp.DataContext, $rootnamespace$" value="CodeFirstMembershipSharp.DataContextInitializer, $rootnamespace$" />
+  </appSettings>
+
+  <system.web>
+
+    <!--Replace your existing membership config with this one-->
+    <membership defaultProvider="CodeFirstMembershipProvider">
+      <providers>
+        <add name="CodeFirstMembershipProvider" type="CodeFirstMembershipSharp.CodeFirstMembershipProvider" connectionStringName="DataContext" />
+      </providers>
+    </membership>
+
+    <!--Profile provider not supported, extend your code with Code-First-->
+    <profile enabled="false">
+      <providers>
+        <clear />
+      </providers>
+    </profile>
+
+    <!--Replace your existing roleManager config with this one-->
+    <roleManager enabled="true" defaultProvider="CodeFirstRoleProvider">
+      <providers>
+        <clear />
+        <add name="CodeFirstRoleProvider" type="CodeFirstMembershipSharp.CodeFirstRoleProvider" connectionStringName="DataContext" />
+      </providers>
+    </roleManager>
+
+  </system.web>
+
+</configuration>
